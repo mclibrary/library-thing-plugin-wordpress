@@ -1,0 +1,57 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 10, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+.library-thing-container {
+  margin: 2em 0;
+  width: 100%;
+             /*overflow: hidden;
+*/
+  height: 200px;
+  position: relative;
+}
+
+/* line 18, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+.lt-row {
+  display: block;
+  width: 100%;
+  /*height: 200px;*/
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -ms-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
+/* line 35, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+.visible {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* line 40, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+.lt-cover {
+  padding: 0;
+  margin: 0 2% 0 0;
+  float: left;
+}
+
+/* line 46, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+.lt-cover img {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  border-radius: 0.25em;
+  border: solid 1px #666633;
+  width: 100% !important;
+}
