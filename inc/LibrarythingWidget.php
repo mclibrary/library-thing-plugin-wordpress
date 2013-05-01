@@ -50,7 +50,7 @@ class LibraryThingWidget {
 
     public function lt_make_cover($obj){
 
-    	$baseURL = plugins_url('library-thing-widget/lt-assets/');
+    	$baseURL = plugins_url('library-thing-plugin-wordpress/lt-assets/');
 
         $books = $this->settings['books_per_row'];
         $books = 100 / $books;
@@ -65,8 +65,8 @@ class LibraryThingWidget {
     }
 
     public function EnqueueLibthingScripts(){
-        wp_enqueue_style('libthing', plugins_url( 'library-thing-widget/public/libthing.css'), false, '20121227');
-        wp_enqueue_script( 'libthing-js', plugins_url( 'library-thing-widget/public/libthing.js'), array( 'jquery' ), 20130104, true );
+        wp_enqueue_style('libthing', plugins_url( 'library-thing-plugin-wordpress/public/libthing.css'), false, '20121227');
+        wp_enqueue_script( 'libthing-js', plugins_url( 'library-thing-plugin-wordpress/public/libthing.js'), array( 'jquery' ), 20130104, true );
 
     }
 }
