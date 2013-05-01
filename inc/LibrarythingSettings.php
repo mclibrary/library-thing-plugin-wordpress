@@ -238,7 +238,6 @@ class LibraryThingSettings {
                     $html .= "<tr>\n";
                     $html .= "<td>". $book->title ."</td>\n</tr>\n";
                 }
-
             $html .= "</tbody></table>";
         }
         echo $html;
