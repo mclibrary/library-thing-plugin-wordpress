@@ -15,8 +15,8 @@ class LibraryThingCache {
         $this->settings = $this->sObj->getSettings();
 
         /* Assining cache diectiory variables */
-        $this->workingDir   = __DIR__ . '/../lt-assets/' . date('Ymd') .'/';
-        $this->cacheDir     = __DIR__ . '/../lt-assets/';
+        $this->workingDir   = dirname(__FILE__) . '/../lt-assets/' . date('Ymd') .'/';
+        $this->cacheDir     = dirname(__FILE__) . '/../lt-assets/';
 
         $this->doCache();
 	
