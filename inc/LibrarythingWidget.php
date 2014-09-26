@@ -57,7 +57,7 @@ class LibraryThingWidget {
         $books = $books - 2;
         $style = 'style="width:' . $books . '%"';
 
-        $output = '<a class="lt-cover" ' . $style . ' href="http://www.librarything.com/isbn/' . $obj->ISBN_cleaned . '" target="_blank">';
+        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/isbn/' . $obj->ISBN_cleaned . '" target="_blank">';
         $output .= '<img src="' . $baseURL . date('Ymd') . '/' . $obj->book_id . '.jpg" />';
         $output .= '</a>';
 
