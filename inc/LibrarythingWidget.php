@@ -57,7 +57,15 @@ class LibraryThingWidget {
         $books = $books - 2;
         $style = 'style="width:' . $books . '%"';
 
-        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/isbn/' . $obj->ISBN_cleaned . '" target="_blank">';
+        /* dbaker 09-26-14 OCLC number lookup */
+        $isbn = $obj->ISBN_cleaned;
+//        $oclcNum = $this->getOclcNumber($isbn);
+        
+         
+        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/search?q=' . $obj->ISBN_cleaned . '&scope=1" target="_blank">'; 
+// Use this when ready
+//        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/oclc/' . $oclcNum . '" target="_blank">';       
+ 
         $output .= '<img src="' . $baseURL . date('Ymd') . '/' . $obj->book_id . '.jpg" />';
         $output .= '</a>';
 
@@ -68,6 +76,21 @@ class LibraryThingWidget {
         wp_enqueue_style('libthing', plugins_url( '/public/libthing.css' , dirname(__FILE__) ), false, '20121227');
         wp_enqueue_script( 'libthing-js', plugins_url( '/public/libthing.js' , dirname(__FILE__) ), array( 'jquery' ), 20130104, true );
 
+    }
+    
+    /* dbaker 09-26-14 -- use WorldCat Search API to get JSON object and return OCLC number of resource */
+    /* This function needs to be executed when cache is refreshed. It takes too long to request the JSON info for each cover on the page load */
+    public function getOclcNumber($isbn) {
+      $url = "http://www.worldcat.org/webservices/catalog/content/libraries/isbn/" . $isbn . "?oclcsymbol=TMJ&wskey=wlqnFvygpkIsvc6mwFKBA1MoFzLZDl9ziyAQ0IXxTdXopLJOTIQW2lQClwMYmc4tQ92HZqtX3hhQpLI0&format=json";
+      $jsonStr = file_get_contents($url);
+      
+      if ($jsonStr) {
+         $oclcNum = json_decode($jsonStr)->OCLCnumber;
+         return $oclcNum;
+      }
+      else {
+         return false;
+      } 
     }
 }
 
