@@ -1,8 +1,7 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 10, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
+/*  
+libthing.css - librarything widget style
+10-3-14 dbaker - Editing this file directly, no longer useing sass/compass
+*/
 .library-thing-container {
   margin: 2em 0;
   width: 100%;
@@ -12,7 +11,6 @@
   position: relative;
 }
 
-/* line 18, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
 .lt-row {
   display: block;
   width: 100%;
@@ -29,29 +27,34 @@
   transition: opacity 1s linear;
 }
 
-/* line 35, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
 .visible {
   opacity: 1;
   z-index: 2;
 }
 
-/* line 40, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
 .lt-cover {
   padding: 0;
   margin: 0 2% 0 0;
   float: left;
-}
+} 
 
-/* line 46, C:/Users/jweinbender/Documents/My Web Sites/LibraryLocal/wp-content/plugins/libthing-cache-wordpress/compass/libthing.scss */
 .lt-cover img {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 0.25em;
-  -moz-border-radius: 0.25em;
-  -ms-border-radius: 0.25em;
-  -o-border-radius: 0.25em;
-  border-radius: 0.25em;
-  border: solid 1px #666633;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
   width: 100% !important;
+} .lt-cover img:hover {
+   -webkit-box-shadow: 0px 0px 5px 2px #ea7125; 
+   -moz-box-shadow: 0px 0px 5px 2px #ea7125; 
+   box-shadow: 0px 0px 5px 2px #ea7125; 
+   -webkit-transition: all linear 0.15s;
+   -moz-transition: all linear 0.15s;
+   -o-transition: all linear 0.15s; 
+   -ms-transition: all linear 0.15s;
+   transition: all linear 0.15s;
 }
