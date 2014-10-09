@@ -5,6 +5,7 @@ libthing.css - librarything widget style
 .library-thing-container {
   margin: 2em 0;
   width: 100%;
+  max-width:650px;
              /*overflow: hidden;
 */
   height: 200px;
