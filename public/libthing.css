@@ -49,13 +49,4 @@ libthing.css - librarything widget style
   -o-border-radius: 2px;
   border-radius: 2px;
   width: 100% !important;
-} .lt-cover img:hover {
-   -webkit-box-shadow: 0px 0px 5px 2px #ea7125; 
-   -moz-box-shadow: 0px 0px 5px 2px #ea7125; 
-   box-shadow: 0px 0px 5px 2px #ea7125; 
-   -webkit-transition: all linear 0.15s;
-   -moz-transition: all linear 0.15s;
-   -o-transition: all linear 0.15s; 
-   -ms-transition: all linear 0.15s;
-   transition: all linear 0.15s;
-}
+} 

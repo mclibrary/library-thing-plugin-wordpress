@@ -31,7 +31,7 @@ class LibraryThingSettings {
                 'max_rows'      => 3,
                 'books_per_row' => 5,
                 'cache_length'  => 30,
-                'coverWidth'    => '125px',
+                'coverWidth'    => '125',
                 'timestamp'     => 0,
             );
 
@@ -137,6 +137,18 @@ class LibraryThingSettings {
                     'Cache length (in minutes).'
                 )
             );
+            
+            /* FIELD Cover Width */ /* dbaker 10-15-14 */
+            add_settings_field(
+               'coverWidth',
+               'Cover Width',
+               array($this, 'libthing_cover_width_callback'),
+               $this->pluginSettingsPage,
+               'libthing_widget_settings_section',
+               array(
+                  'Cover width (in pixels).'
+               )
+            );
 
         /* SECTION Cache */
         add_settings_section(
@@ -217,6 +229,13 @@ class LibraryThingSettings {
         echo $html;
     	}
 
+    /* dbaker 10-15-14 */
+    public function libthing_cover_width_callback($args) {
+      $html = '<input type="text" id="coverWidth" name="libthing_plugin_settings[coverWidth]" value="' . $this->settings['coverWidth'] . '" />';
+      $html .= '<label for="coverWidth"> ' . $args[0] . '</label>';
+      echo $html;
+    }   
+      
     public function libthing_timestamp_callback($args) {
         if (!$this->settings['timestamp']){
             $html = '<code>NA</code>';

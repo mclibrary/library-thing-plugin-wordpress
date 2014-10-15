@@ -53,7 +53,7 @@ class LibraryThingCache {
             'responseType'  => 'json',
             'resultsets'    => 'books',
             'max'           => $this->settings['max_rows'] * $this->settings['books_per_row'],
-            'coverwidth'    => '125px',
+            'coverwidth'    => $this->settings['coverWidth'], /* . 'px', '125px', */ /* dbaker 10-15-14 */
         );
 
         /* Double-check for required fields */
