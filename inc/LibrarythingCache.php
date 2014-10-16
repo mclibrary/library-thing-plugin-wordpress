@@ -26,6 +26,7 @@ class LibraryThingCache {
         if($this->isCacheExpired()){
             $this->saveJSON();
             $this->cacheAssets();
+            $this->optimizeImageFiles();
         }
     }
 
@@ -145,6 +146,20 @@ class LibraryThingCache {
                 }
         }
 
+    /* Optimize jpeg images - dbaker 10-16-14 */
+    public function optimizeImageFiles() {
+      $imgFiles = scandir($this->workingDir);
+      $imgFiles = array_diff($imgFiles, array('.', '..'));
+      foreach ($imgFiles as $imgFile) {
+         $local_file_path = $this->workingDir . $imgFile;
+         $temp_image = imagecreatefromjpeg($local_file_path);
+         if ($temp_image) {
+            imagejpeg($temp_image, $local_file_path, 50);
+         }
+      }
+      imagedestroy($temp_image);
+    }
+        
     /* Removes Directory from Pevious Day */
     public function cleanupOldFiles($date){
         foreach (glob($this->cacheDir . "*/") as $filename) {
