@@ -33,6 +33,7 @@ class LibraryThingSettings {
                 'cache_length'  => 30,
                 'coverWidth'    => '125',
                 'timestamp'     => 0,
+                'jpegQuality'   => 50,
             );
 
             /* Save defaults to DB */
@@ -146,8 +147,20 @@ class LibraryThingSettings {
                $this->pluginSettingsPage,
                'libthing_widget_settings_section',
                array(
-                  'Cover width (in pixels).'
+                  'Cover width (in pixels). Value of 0 loads full-size image'
                )
+            );
+            
+            /* FIELD JPEG Quality */ /* dbaker 10-16-14 */
+            add_settings_field(
+               'jpegQuality',
+               'JPEG Quality',
+               array($this, 'libthing_jpeg_quality_callback'),
+               $this->pluginSettingsPage,
+               'libthing_widget_settings_section',
+               array(
+                  'Quality of cover images. Value between 0 (worst quality, smaller file) to 100 (best quality, largest file).'
+               )               
             );
 
         /* SECTION Cache */
@@ -235,6 +248,13 @@ class LibraryThingSettings {
       $html .= '<label for="coverWidth"> ' . $args[0] . '</label>';
       echo $html;
     }   
+    
+    /* dbaker 10-16-14 */
+    public function libthing_jpeg_quality_callback($args) {
+      $html = '<input type="text" id="jpegQuality" name="libthing_plugin_settings[jpegQuality]" value="' . $this->settings['jpegQuality'] . '" />';
+      $html .= '<label for="jpegQuality"> ' . $args[0] . '</label>';
+      echo $html;
+    }
       
     public function libthing_timestamp_callback($args) {
         if (!$this->settings['timestamp']){

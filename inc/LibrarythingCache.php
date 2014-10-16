@@ -154,7 +154,7 @@ class LibraryThingCache {
          $local_file_path = $this->workingDir . $imgFile;
          $temp_image = imagecreatefromjpeg($local_file_path);
          if ($temp_image) {
-            imagejpeg($temp_image, $local_file_path, 50);
+            imagejpeg($temp_image, $local_file_path, $this->settings['jpegQuality']);
          }
       }
       imagedestroy($temp_image);
