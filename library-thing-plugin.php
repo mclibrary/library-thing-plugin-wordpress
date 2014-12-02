@@ -8,6 +8,7 @@ Author: Jack Weinbender
 Author URI: https://github.com/jackweinbender
 */
 
+date_default_timezone_set(get_option('timezone_string'));
 
 include 'inc/LibraryThingSettings.php';
 include 'inc/LibraryThingCache.php';

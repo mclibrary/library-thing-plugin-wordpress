@@ -33,7 +33,8 @@ class LibraryThingCache {
     /* Check if cache has expired */
 	public function isCacheExpired(){
 
-        $this->time = (int) current_time('timestamp', 0);
+        //$this->time = (int) current_time('timestamp', 0);
+        $this->time = time();
 
         if ( $this->settings['timestamp'] + $this->settings['cache_length'] * 60 < $this->time ){
             return true;

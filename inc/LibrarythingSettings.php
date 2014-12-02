@@ -260,7 +260,7 @@ class LibraryThingSettings {
         if (!$this->settings['timestamp']){
             $html = '<code>NA</code>';
         } else {
-        $html = '<code>' . date('j M Y g:i:s A', $this->settings['timestamp']) . '</code>';
+        $html = '<code>' . date('j M Y g:i:s A e', $this->settings['timestamp']) . '</code>';
         }
         echo $html;
     	}
