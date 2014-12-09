@@ -13,7 +13,7 @@ libthing.css - librarything widget style
 }
 
 .lt-row {
-  display: block;
+  display: table; /* block; */
   width: 100%;
   /*height: 200px;*/
   z-index: 0;
@@ -34,9 +34,11 @@ libthing.css - librarything widget style
 }
 
 .lt-cover {
+  display: table-cell;
   padding: 0;
+  padding-right: 2%;
   margin: 0 2% 0 0;
-  float: left;
+  /*float: left;*/
 } 
 
 .lt-cover img {

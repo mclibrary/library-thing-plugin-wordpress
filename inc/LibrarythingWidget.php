@@ -52,21 +52,22 @@ class LibraryThingWidget {
 
     	$baseURL = plugins_url( null , dirname(__FILE__)) . '/lt-assets/';
 
-        $books = $this->settings['books_per_row'];
+        /* dbaker 12/9/14 - Styled from ext CSS using display: table */
+        /*$books = $this->settings['books_per_row'];
         $books = 100 / $books;
         $books = $books - 2;
-        $style = 'style="width:' . $books . '%"';
+        $style = 'style="width:' . $books . '%"';*/
 
         /* dbaker 09-26-14 OCLC number lookup */
         $isbn = $obj->ISBN_cleaned;
-//        $oclcNum = $this->getOclcNumber($isbn);
+//      $oclcNum = $this->getOclcNumber($isbn);
         
          
-        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/search?q=' . $obj->ISBN_cleaned . '&scope=1" target="_blank">'; 
+        $output = '<a class="lt-cover" ' . /*$style .*/ ' href="http://milligan.worldcat.org/search?q=' . $obj->ISBN_cleaned . '&amp;scope=1" target="_blank">'; 
 // Use this when ready
-//        $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/oclc/' . $oclcNum . '" target="_blank">';       
+//      $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/oclc/' . $oclcNum . '" target="_blank">';       
  
-        $output .= '<img src="' . $baseURL . date('Ymd') . '/' . $obj->book_id . '.jpg" />';
+        $output .= '<img src="' . $baseURL . date('Ymd') . '/' . $obj->book_id . '.jpg" alt="' . htmlspecialchars($obj->title) . '" />';
         $output .= '</a>';
 
         return $output;
