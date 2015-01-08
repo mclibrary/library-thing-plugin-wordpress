@@ -29,7 +29,7 @@ class LibraryThingWidget {
 
             foreach ($books as $book) {
                 if ($i % $this->settings['books_per_row'] === 1){
-                    $output .= '<div class="lt-row">';
+                    $output .= '<div class="lt-row visible">';
                     $output .= $this->lt_make_cover($book);
                     $i++;
                 }
