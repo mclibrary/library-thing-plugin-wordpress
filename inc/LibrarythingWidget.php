@@ -74,8 +74,8 @@ class LibraryThingWidget {
     }
 
     public function EnqueueLibthingScripts(){
-        wp_enqueue_style('libthing', plugins_url( '/public/libthing.css' , dirname(__FILE__) ), false, '20121227');
-        wp_enqueue_script( 'libthing-js', plugins_url( '/public/libthing.js' , dirname(__FILE__) ), array( 'jquery' ), 20130104, true );
+        wp_enqueue_style('libthing', plugins_url( '/public/libthing.css' , dirname(__FILE__) ), false, filemtime(dirname(dirname(__FILE__)) . '/public/libthing.css'));
+        wp_enqueue_script( 'libthing-js', plugins_url( '/public/libthing.js' , dirname(__FILE__) ), array( 'jquery' ), filemtime(dirname(dirname(__FILE__)) . '/public/libthing.js'), true );
 
     }
     
