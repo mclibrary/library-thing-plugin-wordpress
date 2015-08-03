@@ -63,7 +63,7 @@ class LibraryThingWidget {
 //      $oclcNum = $this->getOclcNumber($isbn);
         
          
-        $output = '<a class="lt-cover" ' . /*$style .*/ ' href="https://milligan.on.worldcat.org/search?queryString=' . $obj->ISBN_cleaned . '&amp;scope=2" target="_blank">'; 
+        $output = '<a class="lt-cover" ' . /*$style .*/ ' href="https://milligan.on.worldcat.org/search?queryString=' . $obj->ISBN_cleaned . '&amp;scope=0" target="_blank">'; 
 // Use this when ready
 //      $output = '<a class="lt-cover" ' . $style . ' href="http://milligan.worldcat.org/oclc/' . $oclcNum . '" target="_blank">';       
  
